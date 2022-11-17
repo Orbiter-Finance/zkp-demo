@@ -4,12 +4,12 @@ go 1.19
 
 require (
 	github.com/consensys/gnark v0.7.0
+	github.com/consensys/gnark-crypto v0.7.0
 	github.com/joho/godotenv v1.4.0
 	gorm.io/gorm v1.23.9-0.20220713102635-3262daf8d468
 )
 
 require (
-	github.com/consensys/gnark-crypto v0.7.0 // indirect
 	github.com/fxamacker/cbor/v2 v2.2.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
