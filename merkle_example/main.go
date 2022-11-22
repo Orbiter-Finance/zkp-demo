@@ -102,7 +102,7 @@ func main() {
 
 	proof, err := groth16.Prove(r1cs, pk, witness)
 	if err != nil {
-		fmt.Printf("Prove failed： %v\n", err)
+		fmt.Printf("Prove failed: %v\n", err)
 		return
 	}
 
