@@ -10,9 +10,7 @@ describe("mimc", function () {
 
   before(async function () {
     accounts = await ethers.getSigners();
-    contractFactory = await ethers.getContractFactory(
-      "../contracts/mimc_groth16.sol"
-    );
+    contractFactory = await ethers.getContractFactory("Verifier");
   });
 
   it("deploy", async function () {
