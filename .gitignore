@@ -37,3 +37,9 @@ input.json
 
 .vscode
 .env
+
+node_modules
+
+# hardhat
+cache
+artifacts

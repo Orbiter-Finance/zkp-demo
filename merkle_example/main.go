@@ -106,7 +106,8 @@ func main() {
 		return
 	}
 
-	f, _ := os.OpenFile("merkle_groth16.sol", os.O_CREATE|os.O_WRONLY, 0666)
+	verifySolidityPath := fmt.Sprintf("..%chardhat%ccontracts%cmerkle_groth16.sol", os.PathSeparator, os.PathSeparator, os.PathSeparator)
+	f, _ := os.OpenFile(verifySolidityPath, os.O_CREATE|os.O_WRONLY, 0666)
 	defer f.Close()
 	vk.ExportSolidity(f)
 
