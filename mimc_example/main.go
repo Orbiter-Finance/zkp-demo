@@ -39,10 +39,8 @@ func mimcHash(data []byte) string {
 func main() {
 	godotenv.Load(fmt.Sprintf("..%c.env", os.PathSeparator))
 
-	preImage := []byte{0x01, 0x02, 0x03}
+	preImage := []byte("123")
 	hash := mimcHash(preImage)
-
-	fmt.Printf("Hash: %s\n", hash)
 
 	var circuit CubicCircuit
 	r1cs, err := frontend.Compile(ecc.BN254, r1cs.NewBuilder, &circuit)
@@ -65,12 +63,24 @@ func main() {
 		return
 	}
 
-	publicWitness, _ := witness.Public()
-
 	verifySolidityPath := fmt.Sprintf("..%chardhat%ccontracts%cmimc_groth16.sol", os.PathSeparator, os.PathSeparator, os.PathSeparator)
-	f, _ := os.OpenFile(verifySolidityPath, os.O_CREATE|os.O_WRONLY, 0666)
-	defer f.Close()
-	vk.ExportSolidity(f)
+	verifySolidityFile, _ := os.OpenFile(verifySolidityPath, os.O_CREATE|os.O_WRONLY, 0666)
+	defer verifySolidityFile.Close()
+	vk.ExportSolidity(verifySolidityFile)
+
+	publicWitness, _ := witness.Public()
+	fmt.Println("publicWitness: ", publicWitness)
+
+	publicWitnessPath := fmt.Sprintf("..%chardhat%ctest%cmimc_public_witness.input", os.PathSeparator, os.PathSeparator, os.PathSeparator)
+	publicWitnessFile, _ := os.OpenFile(publicWitnessPath, os.O_CREATE|os.O_WRONLY, 0666)
+	defer publicWitnessFile.Close()
+	publicWitnessJson, _ := publicWitness.MarshalJSON()
+	publicWitnessFile.Write(publicWitnessJson)
+
+	proofPath := fmt.Sprintf("..%chardhat%ctest%cmimc.proof", os.PathSeparator, os.PathSeparator, os.PathSeparator)
+	proofFile, _ := os.OpenFile(proofPath, os.O_CREATE|os.O_WRONLY, 0666)
+	defer proofFile.Close()
+	proof.WriteRawTo(proofFile)
 
 	err = groth16.Verify(proof, vk, publicWitness)
 	if err != nil {

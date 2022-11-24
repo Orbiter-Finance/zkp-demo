@@ -6,7 +6,8 @@
   "author": "0xbbPizza <0xbbgo@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^16.0.1"
+    "dotenv": "^16.0.1",
+    "fs-extra": "^10.1.0"
   },
   "devDependencies": {
     "@arbitrum/sdk": "^3.0.0-beta.8",
@@ -16,6 +17,7 @@
     "@openzeppelin/contracts": "^4.6.0",
     "@openzeppelin/contracts-upgradeable": "4.5.2",
     "@types/chai": "^4.3.0",
+    "@types/fs-extra": "^9.0.13",
     "@types/mocha": "^9.1.0",
     "@types/node": "^17.0.36",
     "arb-bridge-eth": "^0.7.8",
