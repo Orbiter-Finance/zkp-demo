@@ -60,8 +60,9 @@ func main() {
 	if err != nil {
 		return
 	}
-	fmt.Printf("numLeaves: %v\n", numLeaves)
-	fmt.Printf("proof: %v\n", len(merkleProof))
+	fmt.Println("merkleRoot:", merkleRoot)
+	fmt.Println("numLeaves:", numLeaves)
+	fmt.Println("proof: ", merkleProof)
 
 	proofHelper := merkle.GenerateProofHelper(merkleProof, proofIndex, numLeaves)
 
