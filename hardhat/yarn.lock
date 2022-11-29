@@ -736,6 +736,14 @@
   resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-3.4.2.tgz#d81f786fda2871d1eb8a8c5a73e455753ba53527"
   integrity sha512-z0zMCjyhhp4y7XKAcDAi3Vgms4T2PstwBdahiO0+9NaGICQKjynK3wduSRplTgk4LXmoO1yfDGO5RbjKYxtuxA==
 
+"@openzeppelin/merkle-tree@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@openzeppelin/merkle-tree/-/merkle-tree-1.0.1.tgz#36feaae6192aeb509bfd1abd047d18cd3d2bd8ac"
+  integrity sha512-t3D49zshHMV5gJGmD10CTQ4V41JIwWhLQ0btSLmkZLLZSMjLvZKMDDGcI7p2xuLQMjtrOucgf5usgHQIfQ7jUg==
+  dependencies:
+    "@ethersproject/abi" "^5.7.0"
+    ethereum-cryptography "^1.1.2"
+
 "@resolver-engine/core@^0.3.3":
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/@resolver-engine/core/-/core-0.3.3.tgz#590f77d85d45bc7ecc4e06c654f41345db6ca967"
@@ -3497,7 +3505,7 @@ ethereum-cryptography@0.1.3, ethereum-cryptography@^0.1.3:
     secp256k1 "^4.0.1"
     setimmediate "^1.0.5"
 
-ethereum-cryptography@^1.0.3:
+ethereum-cryptography@^1.0.3, ethereum-cryptography@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/ethereum-cryptography/-/ethereum-cryptography-1.1.2.tgz#74f2ac0f0f5fe79f012c889b3b8446a9a6264e6d"
   integrity sha512-XDSJlg4BD+hq9N2FjvotwUET9Tfxpxc3kWGE2AqUG5vcbeunnbImVk3cj6e/xT3phdW21mE8R5IugU4fspQDcQ==

@@ -55,6 +55,11 @@ func main() {
 		return
 	}
 
+	pkSolidityPath := fmt.Sprintf("mimc.pk")
+	pkSolidityFile, _ := os.OpenFile(pkSolidityPath, os.O_CREATE|os.O_WRONLY, 0666)
+	defer pkSolidityFile.Close()
+	pk.WriteRawTo(pkSolidityFile)
+
 	assignment := &CubicCircuit{PreImage: preImage, Hash: hash}
 	witness, _ := frontend.NewWitness(assignment, ecc.BN254)
 	proof, err := groth16.Prove(r1cs, pk, witness)

@@ -51,6 +51,8 @@ func main() {
 		buf.Write([]byte(randomStr(10)))
 	}
 
+	fmt.Println("buf:", buf)
+
 	// build & verify proof for an elmt in the file
 	proofIndex := uint64(5)
 	segmentSize := 10
@@ -58,8 +60,8 @@ func main() {
 	if err != nil {
 		return
 	}
-	//fmt.Printf("numLeaves: %v\n", numLeaves)
-	//fmt.Printf("proof: %v\n", len(merkleProof))
+	fmt.Printf("numLeaves: %v\n", numLeaves)
+	fmt.Printf("proof: %v\n", len(merkleProof))
 
 	proofHelper := merkle.GenerateProofHelper(merkleProof, proofIndex, numLeaves)
 

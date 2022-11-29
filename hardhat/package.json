@@ -6,7 +6,9 @@
   "author": "0xbbPizza <0xbbgo@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@openzeppelin/merkle-tree": "^1.0.1",
     "dotenv": "^16.0.1",
+    "ethereum-cryptography": "^1.1.2",
     "fs-extra": "^10.1.0"
   },
   "devDependencies": {
