@@ -81,3 +81,11 @@ export function getChainId(chainId: number) {
     return 77;
   }
 }
+
+export async function sleep(ms: number) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(null)
+    }, ms)
+  })
+}

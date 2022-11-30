@@ -227,5 +227,3 @@ contract Verifier {
         );
     }
 }
- }
-}
