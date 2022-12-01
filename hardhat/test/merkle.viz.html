@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/keccak256@latest/keccak256.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/merkletreejs@latest/merkletree.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/merkletree-viz@latest/merkletreeviz.js"></script>
+  </head>
+  <body>
+    <div id="viz3"></div>
+    <br /><br />
+    <div id="viz4"></div>
+
+    <script text="text/javascript">
+      const leaves3 = ["a", "b", "c"].map(keccak256);
+      const tree3 = new MerkleTree(leaves3, keccak256);
+      const viz3 = new MerkleTreeViz("#viz3");
+      viz3.renderTree(tree3);
+
+      const leaves4 = [
+        "a",
+        "b",
+        "c",
+        "d",
+      ].map(keccak256);
+      const tree4 = new MerkleTree(leaves4, keccak256);
+      const viz4 = new MerkleTreeViz("#viz4");
+      viz4.renderTree(tree4);
+    </script>
+  </body>
+</html>
